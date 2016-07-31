@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- http://pineapplesoftware.blogspot.in/2012/02/customizing-generate-maven.html
+http://maven.40175.n5.nabble.com/m2-How-to-include-javadoc-in-site-td62615.html 
+-->
+<project name="Maven" xmlns="http://maven.apache.org/DECORATION/1.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/DECORATION/1.0.0 http://maven.apache.org/xsd/decoration-1.0.0.xsd">
+
+	<bannerLeft>
+		<name>Drucare</name>
+		<src>images/logo_small.png</src>
+		<href>http://www.dru.care</href>
+	</bannerLeft>
+
+	<publishDate format="dd MMM yyyy" position="left"/>
+
+	<skin>
+		<groupId>org.apache.maven.skins</groupId>
+		<artifactId>maven-fluido-skin</artifactId>
+		<version>1.5</version>
+	</skin>
+
+
+	<custom>
+		<fluidoSkin>
+			<sideBarEnabled>true</sideBarEnabled>
+			<topBarEnabled>false</topBarEnabled>
+			<!-- <topBarIcon> <name>Java SDK For Wyzbee API</name> <alt>Java SDK For 
+				Wyzbee API</alt> <src>/images/logo.jpg</src> </topBarIcon> <navBarStyle>navbar-inverse</navBarStyle> 
+				<facebookLike /> <googlePlusOne /> <googleSearch> <sitesearch /> </googleSearch> -->
+			<sourceLineNumbersEnabled>true</sourceLineNumbersEnabled>
+			<copyrightClass>pull-right</copyrightClass>
+			<breadcrumbDivider>»</breadcrumbDivider>
+
+			<gitHub>
+				<projectId>wyzbee</projectId>
+				<ribbonOrientation>right</ribbonOrientation>
+				<ribbonColor>red</ribbonColor>
+			</gitHub>
+		</fluidoSkin>
+	</custom>
+
+
+	<body>
+	<!-- 	<links>
+			<item name="redpine" href="http://www.redpinesignals.com" />
+		</links>
+ -->
+	<!-- 	<menu name="Regular Web Site">
+			<item name="APT Format" href="format.html" />
+			<item name="Xdoc Example" href="xdoc.html" />
+			<item name="FAQ" href="faq.html" />
+		</menu> -->
+
+		<menu ref="reports" />
+	</body>
+
+	<poweredBy>
+		<logo name="Redpine" href="http://www.dru.care" img="images/drucare.png" />
+	</poweredBy>
+
+
+</project>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+
+	<Appenders>
+		<RollingFile name="WYZBEE" fileName="logs/drucare-api.log"
+			filePattern="logs/drucare-api-%d{MM-dd-yyyy}.log.gz" ignoreExceptions="false">
+			<PatternLayout>
+				<Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
+			</PatternLayout>
+			<TimeBasedTriggeringPolicy />
+		</RollingFile>
+
+		<Console name="Console" target="SYSTEM_OUT" ignoreExceptions="false">
+			<PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+		</Console>
+	</Appenders>
+
+	<Loggers>
+
+		<!-- PLEASE DON'T EDIT BELOW SECTION AND LOG LEVEL. THIS WILL GENERATES 
+			HUGE LOG FILES -->
+		<Logger name="org.springframework" level="INFO" additivity="false">
+			<AppenderRef ref="Console" />
+			<AppenderRef ref="WYZBEE" />
+		</Logger>
+		
+		<Logger name="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping" level="info" additivity="false">
+			<AppenderRef ref="Console" />
+			<AppenderRef ref="WYZBEE" />
+		</Logger>
+		
+		<Logger name="io.swagger.models.parameters.AbstractSerializableParameter" level="ERROR" additivity="false">
+			<AppenderRef ref="Console" />
+			<AppenderRef ref="WYZBEE" />
+		</Logger>
+		
+
+		<Logger name="org.apache.http" level="INFO" additivity="false">
+			<AppenderRef ref="Console" />
+			<AppenderRef ref="WYZBEE" />
+		</Logger>
+
+		<Logger name="org.quartz.core.QuartzSchedulerThread" level="INFO"
+			additivity="false">
+			<AppenderRef ref="Console" />
+			<AppenderRef ref="WYZBEE" />
+		</Logger>
+		
+		
+		
+		<Logger name="org.apache.velocity" level="FATAL"
+			additivity="false">
+			<AppenderRef ref="Console" />
+			<AppenderRef ref="WYZBEE" />
+		</Logger>
+		<Logger name="org.thymeleaf" level="WARN"
+			additivity="false">
+			<AppenderRef ref="Console" />
+			<AppenderRef ref="WYZBEE" />
+		</Logger>
+
+		
+		<Logger name="org.quartz.core.QuartzSchedulerThread" level="INFO"
+			additivity="false">
+			<AppenderRef ref="Console" />
+			<AppenderRef ref="WYZBEE" />
+		</Logger>
+		<!-- PLEASE DON'T EDIT ABOVE SECTION AND LOG LEVEL. THIS WILL GENERATES 
+			HUGE LOG FILES -->
+
+
+		<!-- Change Log Level below only . allowed values. debug(default), info, 
+			warn,error -->
+		<Root level="info">
+			<AppenderRef ref="Console" />
+			<AppenderRef ref="WYZBEE" />
+		</Root>
+
+	</Loggers>
+</Configuration>
